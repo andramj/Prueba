@@ -22,7 +22,6 @@ public class SearchNewCustomer implements Question<Boolean> {
         actor.attemptsTo(Enter.theValue(id).into(CustomerModuleUserInterface.SEARCH_CUSTOMER_INPUT),
                 WaitUntil.the(CustomerModuleUserInterface.ID_SEARCH_TABLE(id),
                         WebElementStateMatchers.isVisible()).forNoMoreThan(10).seconds());
-        System.out.printf(Text.of(CustomerModuleUserInterface.FIRST_ID_CUSTOMER_LABEL).viewedBy(actor).asString()+id);
         return Text.of(CustomerModuleUserInterface.FIRST_ID_CUSTOMER_LABEL).viewedBy(actor).asString().equals(id);
 
     }
